@@ -1,4 +1,3 @@
-
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
@@ -228,13 +227,25 @@ void ImprimeTraco(pNodoA *a, int sinal)
 char consultaAVL(pNodoA *a, char word)
 {
     if (a==NULL)
+    {
         return NULL;
+    }
     else if (strcmp(a->palavra,word) == 0)
+    {
+
         return a->traducao;
+    }
     else if (strcmp(a->palavra,word) > 0)
+     {
+
         return consultaAVL(a->esq,word);
+     }
     else
+      {
+
         return consultaAVL(a->dir,word);
+    }
+
 }
 
 int AbreDicionario(pNodoA *arvore)
@@ -259,15 +270,19 @@ int AbreDicionario(pNodoA *arvore)
     {
         falhou = 1;
 
-        while(feof(arq) != 0)
+        while(!(feof(arq)))
         {
+
             if(fgets(linha,sizeof(linha),arq) != NULL)
             {
-                strcpy(palavra,strtok(linha,"   "));
-                strcpy(trad,strtok(NULL,"   "));
+               //  printf(" %s", linha);
+                 palavra=strtok(linha,"\t");
+                //trad = strtok()
+                strcpy(trad,strtok(NULL,"\t"));
 
 
                 arvore = InsereAVL(arvore,palavra,trad,ok);
+                //printf("plavra: %s\n sinonimo: %s\n", arvore->palavra, arvore->traducao);
             }
 
         }

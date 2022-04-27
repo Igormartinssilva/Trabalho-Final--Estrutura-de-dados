@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1651086564 source:c:\users\luana\onedrive\documentos\codeblocks\trababp\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ABP.h"
+	<locale.h>
+
+1651087164 c:\users\luana\onedrive\documentos\codeblocks\trababp\abp.h
+

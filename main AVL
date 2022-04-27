@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include"cabelho.h"
+#include<locale.h>
+
+
+int main()
+{
+    pNodoA *Arvore_AVL;
+    int *ok,teste;
+    int sinal=0;
+    char pala[20]="conhecimento";
+
+    setlocale(LC_ALL,""); //para imprimir corretamente na tela os caracteres acentuados
+
+    Arvore_AVL = cria_arvore();
+
+    teste = AbreDicionario(Arvore_AVL);
+
+    printf("%d", teste);
+
+    printf("%s", consultaAVL(Arvore_AVL,pala));
+
+    return 0;
+}
